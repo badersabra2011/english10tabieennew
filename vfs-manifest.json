@@ -1,0 +1,42 @@
+[
+  {
+    "path": "App.tsx",
+    "file": {
+      "file_name": "/mnt/data/src/App.tsx",
+      "storage_handle": "",
+      "storage_type": "BASE64"
+    }
+  },
+  {
+    "path": "assets/0a74042b9afcbfbc-img-u7531699226708646296-2.jpg",
+    "file": {
+      "file_name": "img-u7531699226708646296-2.jpg",
+      "storage_handle": "",
+      "storage_type": "MANIFOLD",
+      "fbid": 2179561899617652,
+      "mime": "image/jpeg",
+      "source_identifiers": [
+        {
+          "type": "typed_fbid",
+          "value": {
+            "fbid": 2179561899617652,
+            "fbtype": 71334
+          }
+        },
+        {
+          "type": "url",
+          "value": "safetynet_input_media://10731b0267e84a2da5e8dc9e3d9e1ce5"
+        }
+      ],
+      "media_origin": "USER_UPLOAD"
+    }
+  },
+  {
+    "path": "index.css",
+    "file": {
+      "file_name": "/mnt/data/src/index.css",
+      "storage_handle": "",
+      "storage_type": "BASE64"
+    }
+  }
+]

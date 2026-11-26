@@ -1,0 +1,17 @@
+{
+  "name": "اللغة الإنجليزية - الصف العاشر - مدرسة التابعين",
+  "short_name": "English 10",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f2f4f7",
+  "theme_color": "#2563eb",
+  "dir": "rtl",
+  "lang": "ar",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>English 10 | مدرسة التابعين الشرعية</title><style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui;background:#eef2ff;color:#0f172a}body.dark{background:#0f172a;color:#f1f5f9}
+header{background:linear-gradient(90deg,#dbeafe,#fdf2f8,#fef9c3);padding:26px 16px;text-align:center}body.dark header{background:#1e293b}
+.logo{width:120px;height:120px;object-fit:cover;border-radius:50%;background:#fff;padding:4px}
+header h1{margin:10px 0 4px;font-size:32px}header p{margin:4px 0;color:#475569}body.dark header p{color:#cbd5e1}
+.top{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:14px}
+button{border:0;border-radius:999px;padding:10px 18px;cursor:pointer;background:#0f766e;color:#fff;font-weight:700}
+button.ghost{background:#fff;color:#0f172a;border:1px solid #cbd5e1}body.dark button.ghost{background:#334155;color:#fff;border-color:#475569}
+input{padding:11px;border-radius:12px;border:1px solid #cbd5e1;width:100%;max-width:420px}
+main{max-width:1100px;margin:auto;padding:0 14px 40px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:700px){.grid{grid-template-columns:1fr}}
+.unit{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.07)}body.dark .unit{background:#1e293b}
+.unit-head{color:#fff;padding:16px}.unit-head h2{margin:0}.unit-head p{margin:4px 0;opacity:.9}
+.lesson{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px;border-bottom:1px solid #f1f5f9}body.dark .lesson{border-color:#334155}
+.lesson b{font-size:15px}.lesson small{color:#64748b;display:block}body.dark .lesson small{color:#94a3b8}
+.badge{background:#f1f5f9;color:#0f172a;padding:5px 10px;border-radius:10px;font-weight:800;min-width:38px;text-align:center}
+.card{background:#fff;border-radius:18px;padding:18px;margin:16px 0}body.dark .card{background:#1e293b}
+.word{display:flex;justify-content:space-between;align-items:center;padding:10px;border-bottom:1px solid #f1f5f9;text-align:left}body.dark .word{border-color:#334155}
+.en{direction:ltr}.hidden{display:none}footer{text-align:center;padding:20px;color:#64748b}
+.grammar-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:700px){.grammar-grid{grid-template-columns:1fr}}
+.gitem{border:1px solid #e2e8f0;border-radius:14px;padding:14px;cursor:pointer}body.dark .gitem{border-color:#334155}
+</style></head><body><div style="background:#facc15;color:#000;text-align:center;padding:10px;font-weight:900">✅ النسخة الجديدة 2.0 – الوحدات بطاقات + القواعد مستقلة + شعار المدرسة</div>
+<header><img class="logo" src="logo.png" alt="شعار مدرسة التابعين الشرعية"><h1>اللغة الإنجليزية – الصف العاشر</h1>
+<p>مدرسة التابعين الشرعية – الصف العاشر الأساسي</p><p>إشراف المعلم الفاضل: أ. سعيد السكافي</p><p>برمجة وتطوير: بدر صبرة</p>
+<p>المصدر: الرزمة التعليمية – Pupil's Book 10 – Learning Modules 2024 – وزارة التربية والتعليم – غزة</p></header>
+<div class="top"><button onclick="showHome()">🏠 الرئيسية</button><button onclick="toggleDark()">🌙 / ☀️ الوضع الليلي</button><input id="search" placeholder="ابحث: satellite / Helen / will..." oninput="filterUnits()"></div>
+<main>
+<div id="home"><div class="card" id="progressBar"></div>
+<div class="card"><h2>📚 الوحدات – الفصل الأول (1-5) + مراجعة واختبار</h2><p>اضغط على أي درس لفتحه، وزر <b>ابدأ</b> يفتح أول درس في الوحدة.</p></div>
+<div class="grid" id="unitsGrid"></div>
+<div class="card"><h2>📘 القواعد Grammar – كل قواعد الفصل الأول في مكان واحد</h2><div class="grammar-grid" id="grammarGrid"></div></div>
+<div class="card"><h2>📖 المفردات – ابحث واستمع واحفظ</h2><div id="vocabList"></div></div>
+</div>
+<div id="detail" class="hidden"></div>
+</main><footer>مدرسة التابعين الشرعية – غزة – فلسطين 🇵🇸</footer>
+
+<script>
+const UNITS=[{"n": 1, "t": "Making contact", "color": "#0f766e", "lessons": [{"id": "1-1", "title": "Period 1: الكلمات والرسائل", "body": "<b>الكلمات:</b> apartment شقة، attach يرفق، cancel يلغي، definite مؤكد، depart يغادر، district منطقة، junior ناشئ، contact تواصل، research بحث، reply يرد، settle in يستقر، lead في المقدمة، show round يرشد في جولة، take out يصطحب.<br><br><b>القراءة:</b> رسائل Jenny و Basim. والد Jenny سينضم لمشروع بحث زراعي مع والد Basim. الرحلة 1 أكتوبر، تغادر 08:30 وتصل 15:15. ستزور فلسطين في عطلة الشتاء 23 ديسمبر - 9 يناير. فريق Basim فاز 3-1."}, {"id": "1-2", "title": "Period 2: المضارع للمستقبل", "body": "<b>القاعدة:</b> المضارع المستمر للخطط الشخصية: He is joining your dad next month. / Dad is flying next Saturday.<br>المضارع البسيط للمواعيد الثابتة: His flight departs at 08:30. / They start on 23rd December.<br><br><b>تدريب:</b> Captain Omar departs from Arafat International at 08:30 on Sunday. At 11:15, he reaches Istanbul."}, {"id": "1-3", "title": "Period 3: Phrasal Verbs + will / going to", "body": "<b>Phrasal verbs:</b> put up يعلق، put down يضع، put on يلبس، put away يرتب، take out يخرج، take off يخلع، take over يتولى.<br><br><b>will / going to:</b> going to للخطط والتنبؤ بدليل: I am going to interview him. / It is going to rain.<br>will للقرار الفوري والعرض والوعد: I will take you for lunch. / I will carry your backpack."}, {"id": "1-4", "title": "Period 4: كتابة إيميل + مراجعة", "body": "<b>الكتابة:</b> اكتب إيميلا مثل Jenny: الفقرة 1: اتصال من أبي ومشكلة في الرحلة. الفقرة 2: تفاصيل الرحلة الجديدة: Flight PR 253 - depart 18:45 - arrive 21:45. الفقرة 3: اطلب من Basim أن يخبر والده.<br><br><b>ورقة المراجعة:</b> attach / condition / depart / predict / cancel / region + put on / takes off / put down / taking over / puts away / took out + feed/food - produce/products - success/succeed."}]}, {"n": 2, "t": "From here to there", "color": "#7c3aed", "lessons": [{"id": "2-1", "title": "Period 1: الكلمات والقراءة", "body": "<b>الكلمات:</b> exact بالضبط، GPS نظام تحديد المواقع، kph كم/ساعة، life raft قارب نجاة، measure يقيس، nearly تقريبا، orbit يدور في مدار، position موقع، row يجدف، satellite قمر صناعي، satellite phone هاتف فضائي، satnav ملاحة فضائية، storm عاصفة، wave موجة.<br><br><b>القراءة:</b> Finding the way - فريق Mark Stubbs يجدف عبر الأطلسي، 40 يوما و 3000 كم، عاصفة الساعة 2:30، موجة دمرت القارب، أنقذهم قارب نجاة + هاتف فضائي + GPS، وجدتهم سفينة 6:30 صباحا."}, {"id": "2-2", "title": "Period 2: Present Perfect", "body": "<b>القاعدة:</b> المضارع التام: The girls have just set off. / We have not found another clue so far.<br>المضارع التام المستمر: We have been running and running. / We have been going the wrong way.<br>نستخدم just / already / yet / still / so far مع المضارع التام."}, {"id": "2-3", "title": "Period 3: Past Simple vs Present Perfect", "body": "<b>القاعدة:</b> الماضي البسيط لفعل انتهى في الماضي: A ship found them at 6:30 am.<br>المضارع التام لفعل يرتبط بالحاضر: GPS has saved many lives. / Satnavs have become popular in recent years.<br><br><b>أسئلة:</b> Where did you set off from? / How far have you travelled so far? / How many days have you been at sea?"}, {"id": "2-4", "title": "Period 4: مراجعة الوحدة", "body": "<b>ورقة المراجعة:</b> prize / measure / riddle / storm / so far / life raft + أضداد: best/worst - into/out of - to the left/to the right - along/across - brother/sister - question/answer.<br><b>أفعال:</b> wash - wait - not watch - not see - arrive - get.<br><b>أسئلة:</b> When did they start their work yesterday? / How long have you been learning English?"}]}, {"n": 3, "t": "Freetime activities", "color": "#db2777", "lessons": [{"id": "3-1", "title": "Period 1: Modals 1", "body": "<b>القاعدة:</b> may/might للاحتمال: We may hurt ourselves. / You might not know about rugby.<br>can للقدرة والإذن: You can carry the ball in rugby. / can't لعدم القدرة: We can't easily leave the city.<br>could للطلب والعرض: Could you send me some photos? / I could email you some photos.<br>shall للعرض: Shall I email you some photos?"}, {"id": "3-2", "title": "Period 2: Modals 2 + القراءة", "body": "<b>القاعدة:</b> should للنصيحة: You should see it. / must للضرورة: I must stop. / mustn't للمنع: We tell her she must not worry.<br>have to للضرورة: We have to do homework. / don't have to لعدم الضرورة: You do not have to kick the ball.<br>need to: I need to get things ready.<br><br><b>القراءة:</b> Joe و Ann - الدراجات والكيك."}, {"id": "3-3", "title": "Period 3: do / go / play + أفعال", "body": "<b>do:</b> cooking <b>go:</b> swimming <b>play:</b> volleyball<br><b>أضف:</b> camping - flower arranging - photography - rugby - tennis - white water rafting.<br><b>أفعال من النص:</b> accept an order - lose a job - make a cake - supply cakes."}, {"id": "3-4", "title": "Period 4: الماضي + الملكية + استبيان", "body": "<b>القاعدة:</b> could / couldn't - was able to / were able to - had to / didn't have to.<br><b>الملكية:</b> The boy's bike. / The two boys' bikes. / The two children's bikes.<br><b>الاختصارات:</b> it's - shouldn't - we're - you'd - I'm - can't.<br><b>استبيان:</b> Young People Today - اكتب فقرة عن يومك: متى تستيقظ؟ واجباتك؟ وقت فراغك؟"}]}, {"n": 4, "t": "Emergency!", "color": "#dc2626", "lessons": [{"id": "4-1", "title": "Period 1: الصفات Adjectives", "body": "<b>القاعدة:</b> الصفة تصف الاسم، وتأتي قبله: a full schedule. / بعد be/feel/seem/look: We are dirty. / We are dirty and exhausted.<br>صفات -ing تصف الشيء: amazing - exciting - boring.<br>صفات -ed تصف الشعور: exhausted - worried - embarrassed - scared.<br><br><b>تدريب:</b> You seem very happy! / I don't know who's going to win, it's very exciting!"}, {"id": "4-2", "title": "Period 2: القراءة - Helen West", "body": "<b>الكلمات:</b> alive على قيد الحياة، ambulance سيارة إسعاف، cheer يهتف، desperately بيأس، examine يفحص، floor طابق، ladder سلم، lean يميل، ledge حافة ضيقة، nowhere لا مكان، rush يسرع، smash يحطم، explosion انفجار.<br><br><b>النص:</b> Young nurse saved from 10th floor fire - Helen West 19 سنة، حريق الساعة 11 مساء، حافة 15 سم وارتفاع 30 مترا، السلم أقصر بـ 10 أمتار، انفجار، أنقذها Dave Yates و Ken Winterton، خرجت غير مصابة."}, {"id": "4-3", "title": "Period 3: الظروف Adverbs", "body": "<b>القاعدة:</b> الظرف يصف الفعل، نضيف -ly للصفة: quickly - silently - desperately.<br>موقعه: قبل الفعل أو بعده، والمفعول بعد الظرف: She shut the door quickly.<br>ظرف الجملة: Luckily, some neighbours heard her.<br>ظروف شاذة: hard - early - fast - well.<br><b>تدريب:</b> beautiful→beautifully / happy→happily / safe→safely / good→well / fast→fast."}, {"id": "4-4", "title": "Period 4: كتابة قصة - An emergency in Jericho", "body": "<b>القصة:</b> When the Bell family were on holiday in Jericho, they took an exciting cable car ride up to Deir Quruntel. Tom climbed over the safety fence, fell to a ledge, hurt himself. The paramedics gave him first aid and took him to hospital.<br><br><b>ورقة المراجعة:</b> نص Helen + examine / desperate / ladder / deal with / cheered + explode/explosion - protect/protection + interesting/interested - shocked + extremely / hard / healthy / well."}]}, {"n": 5, "t": "Dangerous weather", "color": "#0284c7", "lessons": [{"id": "5-1", "title": "Period 1: المقارنة Comparatives", "body": "<b>القاعدة:</b> -er/-est للصفات القصيرة: busier - highest. / more/most للطويلة: more exciting - most dramatic.<br>الظروف: more quickly - earlier and faster.<br>شاذة: good/well → better/best.<br>as...as للمساواة: Wind speeds are as high as 120 kph. / not as...as: The storm is not behaving as violently as some other storms."}, {"id": "5-2", "title": "Period 2: القراءة - Hurricane lives", "body": "<b>الكلمات:</b> accurate دقيق، approach يقترب، breathe يتنفس، combine يجمع، escape ينجو، force قوة، heat حرارة، moreover علاوة على ذلك، poor فقير، properly بشكل صحيح، result نتيجة، storm surge موجة العاصفة، destroy يدمر، destruction دمار، helpless عاجز.<br><br><b>النص:</b> الأعاصير 118 كم/ساعة وأكثر وعرضها 800 كم. Andrew 1992 الأغلى في العالم. بنغلادش 1970: لا تحذير، موجة 10 أمتار، رياح 222 كم/ساعة، مات 500,000 شخص."}, {"id": "5-3", "title": "Period 3: too / enough / so / such", "body": "<b>القاعدة:</b> too...to أكثر من اللازم: Bangladesh is still too poor to protect its population.<br>not...enough أقل من اللازم: Bangladesh is not rich enough to protect its population.<br>so + صفة/ظرف + that: Transport was so bad that people could not escape.<br>such + اسم + that: It was such a disaster that 500,000 died."}, {"id": "5-4", "title": "Period 4: مراجعة الوحدة", "body": "<b>ورقة المراجعة:</b> نص Hurricane + متى تصبح الشمس والهواء والماء خطرا؟ / لماذا لم يهرب الناس في بنغلادش؟ / صح/خطأ: مات القليل في بنغلادش 1970.<br><b>مفردات:</b> temperature / destruction / ambulance / helpless / flames.<br><b>قواعد:</b> harder - the best - high - as - more neatly + إعادة كتابة بـ such...that."}]}, {"n": 6, "t": "مراجعة واختبار شامل", "color": "#b45309", "lessons": [{"id": "6-1", "title": "المراجعة 1: أهم الكلمات 1-5", "body": "<b>راجع وحفظ:</b><br>الوحدة 1: apartment - attach - cancel - definite - depart - research - reply<br>الوحدة 2: exact - GPS - life raft - measure - satellite - storm - wave<br>الوحدة 3: afford - business - castle - recycle - supply - leisure<br>الوحدة 4: alive - ambulance - cheer - examine - ladder - ledge - smash<br>الوحدة 5: accurate - breathe - escape - force - heat - helpless - storm surge<br><br><b>تدريب:</b> غطِ المعنى العربي وحاول أن تتذكر الكلمة الإنجليزية، ثم اكشفها."}, {"id": "6-2", "title": "المراجعة 2: أهم القواعد 1-5", "body": "<b>1:</b> المضارع للمستقبل + will / going to<br><b>2:</b> Present Perfect + Past Simple<br><b>3:</b> Modals: can - could - should - must - have to<br><b>4:</b> Adjectives -ing / -ed + Adverbs -ly<br><b>5:</b> Comparatives + too / enough + so / such...that<br><br><b>تدريب:</b> اكتب مثالا واحدا من كل قاعدة من الرزمة، بدون أن تنظر."}, {"id": "6-3", "title": "المراجعة 3: أهم النصوص 1-5", "body": "<b>1:</b> رسائل Jenny و Basim - الرحلة 1 أكتوبر 08:30 - 15:15<br><b>2:</b> Mark Stubbs - عبور الأطلسي - 40 يوما - أنقذهم GPS<br><b>3:</b> Joe و Ann - الدراجات والكيك<br><b>4:</b> Helen West - حريق الطابق العاشر - خرجت غير مصابة<br><b>5:</b> Hurricane lives - Andrew 1992 - بنغلادش 1970 - 500,000<br><br><b>تدريب:</b> احكِ كل قصة بجملتين فقط بالإنجليزية."}, {"id": "6-4", "title": "الاختبار النهائي: 10 أسئلة – تصحيح تلقائي وعلامة", "body": "<p>اختر الإجابة الصحيحة، ثم اضغط <b>أرسل الاختبار</b> وستظهر علامتك فورا.</p>\n                <div id=\"exam\">\n                <p><b>1:</b> ما معنى attach؟<br><label><input type=\"radio\" name=\"q1\" value=\"1\"> يرفق</label><br><label><input type=\"radio\" name=\"q1\" value=\"0\"> يلغي</label><br><label><input type=\"radio\" name=\"q1\" value=\"0\"> يغادر</label></p>\n                <p><b>2:</b> His flight ______ at 08:30.<br><label><input type=\"radio\" name=\"q2\" value=\"0\"> depart</label><br><label><input type=\"radio\" name=\"q2\" value=\"1\"> departs</label><br><label><input type=\"radio\" name=\"q2\" value=\"0\"> departed</label></p>\n                <p><b>3:</b> ما معنى satellite؟<br><label><input type=\"radio\" name=\"q3\" value=\"1\"> قمر صناعي</label><br><label><input type=\"radio\" name=\"q3\" value=\"0\"> عاصفة</label><br><label><input type=\"radio\" name=\"q3\" value=\"0\"> موجة</label></p>\n                <p><b>4:</b> We ______ running for ages.<br><label><input type=\"radio\" name=\"q4\" value=\"0\"> are</label><br><label><input type=\"radio\" name=\"q4\" value=\"1\"> have been</label><br><label><input type=\"radio\" name=\"q4\" value=\"0\"> was</label></p>\n                <p><b>5:</b> You ______ see it. (نصيحة)<br><label><input type=\"radio\" name=\"q5\" value=\"1\"> should</label><br><label><input type=\"radio\" name=\"q5\" value=\"0\"> mustn't</label><br><label><input type=\"radio\" name=\"q5\" value=\"0\"> can't</label></p>\n                <p><b>6:</b> ما معنى recycle؟<br><label><input type=\"radio\" name=\"q6\" value=\"0\"> يزين</label><br><label><input type=\"radio\" name=\"q6\" value=\"1\"> يعيد تدوير</label><br><label><input type=\"radio\" name=\"q6\" value=\"0\"> يزود</label></p>\n                <p><b>7:</b> من أنقذ Helen West؟<br><label><input type=\"radio\" name=\"q7\" value=\"0\"> الشرطة فقط</label><br><label><input type=\"radio\" name=\"q7\" value=\"1\"> Dave Yates و Ken Winterton</label><br><label><input type=\"radio\" name=\"q7\" value=\"0\"> جيرانها</label></p>\n                <p><b>8:</b> She was really ______ when she saw the fire.<br><label><input type=\"radio\" name=\"q8\" value=\"0\"> happy</label><br><label><input type=\"radio\" name=\"q8\" value=\"1\"> scared</label><br><label><input type=\"radio\" name=\"q8\" value=\"0\"> bored</label></p>\n                <p><b>9:</b> كم كانت سرعة الرياح في بنغلادش 1970؟<br><label><input type=\"radio\" name=\"q9\" value=\"0\"> 118 كم/ساعة</label><br><label><input type=\"radio\" name=\"q9\" value=\"1\"> 222 كم/ساعة</label><br><label><input type=\"radio\" name=\"q9\" value=\"0\"> 100 كم/ساعة</label></p>\n                <p><b>10:</b> It was ______ a disaster that 500,000 died.<br><label><input type=\"radio\" name=\"q10\" value=\"0\"> too</label><br><label><input type=\"radio\" name=\"q10\" value=\"0\"> as</label><br><label><input type=\"radio\" name=\"q10\" value=\"1\"> such</label></p>\n                <button onclick=\"checkExam()\">📤 أرسل الاختبار</button>\n                <div id=\"examResult\" style=\"margin-top:14px;font-size:20px;font-weight:900\"></div>\n                </div>"}]}];
+const GRAMMAR=[{"u": "الوحدة 1", "t": "المضارع للمستقبل + will / going to", "d": "المضارع المستمر للخطط: He is joining your dad next month. / المضارع البسيط للمواعيد: His flight departs at 08:30. / going to للخطط والتنبؤ بدليل. / will للقرار الفوري والعرض والوعد."}, {"u": "الوحدة 2", "t": "Present Perfect + Past Simple", "d": "المضارع التام: have just set off. / المضارع التام المستمر: have been running. / الماضي البسيط: A ship found them at 6:30. / المضارع التام: GPS has saved many lives."}, {"u": "الوحدة 3", "t": "Modals", "d": "may/might احتمال، can/could قدرة وطلب وعرض، shall عرض، should نصيحة، must ضرورة، have to ضرورة، don't have to عدم ضرورة، be able to قدرة. الماضي: could / had to / didn't have to."}, {"u": "الوحدة 4", "t": "Adjectives + Adverbs", "d": "الصفات قبل الاسم وبعد be/feel/seem. -ing للشيء: amazing. -ed للشعور: worried. الظروف: نضيف -ly. شاذة: hard - early - fast - well."}, {"u": "الوحدة 5", "t": "Comparatives + too/enough + so/such", "d": "-er/-est للقصيرة، more/most للطويلة، better/best شاذة، as...as. too...to / not...enough. so + صفة + that / such + اسم + that."}];
+const VOCAB={"1": [["apartment", "شقة"], ["attach", "يرفق"], ["cancel", "يلغي"], ["definite", "مؤكد"], ["depart", "يغادر"], ["district", "منطقة"], ["junior", "ناشئ"], ["research", "بحث"], ["reply", "يرد"], ["settle in", "يستقر"]], "2": [["exact", "بالضبط"], ["GPS", "نظام تحديد المواقع"], ["life raft", "قارب نجاة"], ["measure", "يقيس"], ["nearly", "تقريبا"], ["orbit", "يدور في مدار"], ["position", "موقع"], ["row", "يجدف"], ["satellite", "قمر صناعي"], ["storm", "عاصفة"]], "3": [["afford", "يتحمل التكلفة"], ["business", "عمل تجاري"], ["castle", "قلعة"], ["decorate", "يزين"], ["frame", "إطار"], ["for free", "مجانا"], ["recycle", "يعيد تدوير"], ["similar", "مشابه"], ["supply", "يزود"], ["leisure", "وقت فراغ"]], "4": [["alive", "على قيد الحياة"], ["ambulance", "سيارة إسعاف"], ["cheer", "يهتف"], ["desperately", "بيأس"], ["examine", "يفحص"], ["floor", "طابق"], ["ladder", "سلم"], ["ledge", "حافة ضيقة"], ["rush", "يسرع"], ["smash", "يحطم"]], "5": [["accurate", "دقيق"], ["breathe", "يتنفس"], ["escape", "ينجو"], ["force", "قوة"], ["heat", "حرارة"], ["moreover", "علاوة على ذلك"], ["poor", "فقير"], ["result", "نتيجة"], ["storm surge", "موجة العاصفة"], ["helpless", "عاجز"]]};
+let fav=JSON.parse(localStorage.getItem('fav')||'[]');
+let done=JSON.parse(localStorage.getItem('doneLessons')||'[]');
+function toggleDark(){document.body.classList.toggle('dark');localStorage.setItem('dark',document.body.classList.contains('dark'))}
+if(localStorage.getItem('dark')==='true')document.body.classList.add('dark');
+function showHome(){document.getElementById('home').classList.remove('hidden');document.getElementById('detail').classList.add('hidden');window.scrollTo(0,0)}
+function el(tag, cls, txt){let e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e}
+function openLesson(uid,lid){
+  const u=UNITS.find(x=>x.n==uid); const l=u.lessons.find(x=>x.id==lid);
+  document.getElementById('home').classList.add('hidden');
+  const det=document.getElementById('detail'); det.classList.remove('hidden'); det.innerHTML='';
+  const card=el('div','card');
+  const back=el('button','','⬅ رجوع للوحدات'); back.onclick=showHome; card.appendChild(back);
+  const doneBtn=el('button','','✅ أنهيت هذا الدرس – احفظ تقدمي'); doneBtn.style.background='#16a34a'; doneBtn.style.marginRight='8px';
+  doneBtn.onclick=function(){let k=uid+'-'+lid; if(!done.includes(k)){done.push(k); localStorage.setItem('doneLessons',JSON.stringify(done));} alert('أحسنت! تم حفظ تقدمك ✅'); renderUnits(); showHome();};
+  card.appendChild(doneBtn);
+  card.appendChild(el('h2','','الوحدة '+u.n+' – '+u.t));
+  card.appendChild(el('h3','',l.title));
+  const body=document.createElement('p'); body.style.lineHeight='1.9'; body.style.fontSize='17px'; body.innerHTML=l.body; card.appendChild(body);
+  let vs=[];
+  if(uid<=5){ vs=VOCAB[String(uid)]||[]; } else { for(let k in VOCAB){ vs=vs.concat(VOCAB[k]); } }
+  if(vs.length){
+    card.appendChild(el('hr'));
+    card.appendChild(el('h3','','📚 كلمات هذه الوحدة ('+vs.length+' كلمة)'));
+    vs.forEach(function(v){
+      const row=el('div','word');
+      const left=document.createElement('span'); left.innerHTML='<b class="en">'+v[0]+'</b> – '+v[1]; row.appendChild(left);
+      const right=document.createElement('span');
+      const sp=el('button','','🔊 استماع'); sp.onclick=function(){speechSynthesis.speak(new SpeechSynthesisUtterance(v[0]))}; right.appendChild(sp);
+      const fv=el('button','',(fav.includes(v[0])?'⭐ مفضلة':'☆ مفضلة')); fv.onclick=function(){fav=fav.includes(v[0])?fav.filter(x=>x!==v[0]):[...fav,v[0]]; localStorage.setItem('fav',JSON.stringify(fav)); openLesson(uid,lid);}; right.appendChild(fv);
+      row.appendChild(right); card.appendChild(row);
+    });
+  }
+  let glist=[];
+  if(uid<=5){ if(GRAMMAR[uid-1]) glist=[GRAMMAR[uid-1]]; } else { glist=GRAMMAR; }
+  if(glist.length){
+    card.appendChild(el('hr'));
+    card.appendChild(el('h3','','📘 قاعدة هذه الوحدة'));
+    glist.forEach(function(g){
+      card.appendChild(el('h4','',g.t));
+      const pp=document.createElement('p'); pp.style.lineHeight='1.9'; pp.style.fontSize='17px'; pp.textContent=g.d; card.appendChild(pp);
+    });
+  }
+  card.appendChild(el('hr'));
+  card.appendChild(el('h3','','✍️ أسئلة من الرزمة – اختبر نفسك'));
+  card.appendChild(el('p','','أجب في دفترك، ثم اضغط (أظهر الإجابة) للتحقق.'));
+  const quiz=[];
+  vs.slice(0,3).forEach(function(v){
+    quiz.push({q:'ما معنى كلمة ('+v[0]+') ؟', a:v[1]});
+    quiz.push({q:'ترجم إلى الإنجليزية: ('+v[1]+')', a:v[0]});
+  });
+  if(glist.length){ quiz.push({q:'اكتب جملة واحدة باستخدام قاعدة: '+glist[0].t, a:'مثال من الرزمة: '+glist[0].d.split('/')[0]}); }
+  quiz.slice(0,5).forEach(function(item){
+    const box=document.createElement('div'); box.style.margin='10px 0'; box.style.padding='10px'; box.style.background='rgba(0,0,0,0.04)'; box.style.borderRadius='10px';
+    box.appendChild(el('b','',item.q));
+    const d2=document.createElement('details'); d2.style.marginTop='6px';
+    const sum=document.createElement('summary'); sum.textContent='أظهر الإجابة ✅'; d2.appendChild(sum);
+    d2.appendChild(el('p','',item.a)); box.appendChild(d2); card.appendChild(box);
+  });
+  card.appendChild(el('hr'));
+  card.appendChild(el('h3','','دروس الوحدة:'));
+  u.lessons.forEach(function(x){
+    const b=el('button','ghost',x.title); b.style.margin='4px';
+    b.onclick=function(){openLesson(u.n,x.id)};
+    card.appendChild(b);
+  });
+  det.appendChild(card); window.scrollTo(0,0);
+}
+
+function openGrammar(i){
+  const g=GRAMMAR[i];
+  document.getElementById('home').classList.add('hidden');
+  const det=document.getElementById('detail'); det.classList.remove('hidden'); det.innerHTML='';
+  const card=el('div','card');
+  const back=el('button','','⬅ رجوع'); back.onclick=showHome; card.appendChild(back);
+  card.appendChild(el('h2','',g.u+' – '+g.t));
+  const pp=document.createElement('p'); pp.style.lineHeight='1.9'; pp.style.fontSize='18px'; pp.textContent=g.d; card.appendChild(pp);
+  det.appendChild(card); window.scrollTo(0,0);
+}
+function checkExam(){
+  let s=0; for(let i=1;i<=10;i++){let c=document.querySelector('input[name="q'+i+'"]:checked'); if(c&&c.value=='1')s++}
+  let msg='علامتك: '+s+' / 10 — '+(s>=9?'ممتاز ⭐⭐⭐':s>=7?'جيد جدا ⭐⭐':s>=5?'مقبول ⭐':'راجع الوحدات من جديد 📚');
+  let r=document.getElementById('examResult'); if(r)r.textContent=msg;
+  localStorage.setItem('examScore',s);
+}
+function getProgress(){let total=0; UNITS.forEach(u=>total+=u.lessons.length); return {c:done.length,t:total,p:total?Math.round(done.length/total*100):0}}
+function renderUnits(){
+  let pr=getProgress();
+  let pb=document.getElementById('progressBar');
+  if(pb){pb.innerHTML='<h2>📊 تقدمك</h2><p>أنهيت '+pr.c+' من '+pr.t+' درسا – '+pr.p+'%</p><div style="background:#e2e8f0;border-radius:999px;height:18px;overflow:hidden"><div style="background:#0f766e;height:100%;width:'+pr.p+'%"></div></div><p>علامة الاختبار النهائي: '+(localStorage.getItem('examScore')||'لم تحل الاختبار بعد')+' / 10</p><p>'+(pr.p==100?'ممتاز! أنهيت كل الدروس 🎉':'استمر يا بطل 💪')+'</p>';}
+  const grid=document.getElementById('unitsGrid'); grid.innerHTML='';
+  const names=['الأولى','الثانية','الثالثة','الرابعة','الخامسة','المراجعة'];
+  UNITS.forEach(function(u){
+    const unit=el('div','unit');
+    const headDiv=el('div','unit-head'); headDiv.style.background=u.color;
+    headDiv.appendChild(el('h2','','الوحدة '+names[u.n-1]));
+    headDiv.appendChild(el('p','',u.t));
+    unit.appendChild(headDiv);
+    u.lessons.forEach(function(l){
+      const row=el('div','lesson');
+      const left=el('div');
+      left.appendChild(el('b','',(done.includes(u.n+'-'+l.id)?'✅ ':'')+l.title));
+      const sm=el('small','','من الرزمة التعليمية – صفحة الوحدة'); left.appendChild(sm);
+      row.appendChild(left);
+      const btn=el('button','','ابدأ ▶');
+      btn.onclick=function(){openLesson(u.n,l.id)};
+      row.appendChild(btn);
+      unit.appendChild(row);
+    });
+    grid.appendChild(unit);
+  });
+}
+function renderGrammar(){
+  const g=document.getElementById('grammarGrid'); g.innerHTML='';
+  GRAMMAR.forEach(function(x,i){
+    const d=el('div','gitem');
+    d.appendChild(el('b','',x.u+' – '+x.t));
+    d.appendChild(el('p','',x.d));
+    d.appendChild(el('span','','افتح القاعدة ⬅'));
+    d.onclick=function(){openGrammar(i)};
+    g.appendChild(d);
+  });
+}
+function renderVocab(){
+  const list=document.getElementById('vocabList'); list.innerHTML='';
+  for(let k in VOCAB){
+    list.appendChild(el('h3','','الوحدة '+k));
+    VOCAB[k].forEach(function(v){
+      const row=el('div','word');
+      const left=document.createElement('span'); left.innerHTML='<b class="en">'+v[0]+'</b> – '+v[1]; row.appendChild(left);
+      const right=document.createElement('span');
+      const sp=el('button','','🔊'); sp.onclick=function(){speechSynthesis.speak(new SpeechSynthesisUtterance(v[0]))}; right.appendChild(sp);
+      const fv=el('button','',(fav.includes(v[0])?'⭐':'☆')); fv.onclick=function(){fav=fav.includes(v[0])?fav.filter(x=>x!==v[0]):[...fav,v[0]]; localStorage.setItem('fav',JSON.stringify(fav)); renderVocab();}; right.appendChild(fv);
+      row.appendChild(right); list.appendChild(row);
+    });
+  }
+}
+function filterUnits(){
+  const s=(document.getElementById('search').value||'').toLowerCase();
+  document.querySelectorAll('.unit').forEach(function(el2){el2.style.display=(!s||el2.textContent.toLowerCase().includes(s))?'block':'none'});
+}
+renderUnits(); renderGrammar(); renderVocab();
+</script></body></html>
